@@ -1,14 +1,16 @@
 package com.eafit.nutrition.service;
 
-import com.eafit.nutrition.model.Medicion;
-import com.eafit.nutrition.repository.MedicionRepository;
-import com.eafit.nutrition.repository.PacienteRepository;
-import com.eafit.nutrition.repository.NutricionistaRepository;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.List;
-import java.util.Optional;
+
+import com.eafit.nutrition.model.Medicion;
+import com.eafit.nutrition.repository.MedicionRepository;
+import com.eafit.nutrition.repository.NutricionistaRepository;
+import com.eafit.nutrition.repository.PacienteRepository;
 
 @Service
 public class MedicionServiceSetter {
@@ -48,6 +50,6 @@ public class MedicionServiceSetter {
     return medicionRepository.findById(id);
     }
 
-    // Otros métodos del servicio (omitidos por brevedad)
+
 }
 

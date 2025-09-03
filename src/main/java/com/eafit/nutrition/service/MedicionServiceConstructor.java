@@ -1,8 +1,8 @@
 package com.eafit.nutrition.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-import java.time.LocalDate;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,7 +41,8 @@ public class MedicionServiceConstructor {
     return medicionRepository.findById(id);
     }
 
-    // Otros métodos del servicio (omitidos por brevedad)
+
+    @Transactional
     public Medicion createMedicion(Long pacienteId, Long nutricionistaId, Medicion medicion) {
         Paciente paciente = pacienteRepository.findById(pacienteId)
         .orElseThrow(() -> new RuntimeException("Paciente no encontrado con id: " + pacienteId));

@@ -3,6 +3,7 @@ package com.eafit.nutrition.model;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,7 +40,7 @@ public class Nota {
     // Relación LAZY con Nutricionista
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "nutricionista_id", nullable = false)
-    @JsonIgnore
+    @JsonIgnoreProperties({"pacientes", "notas"})
     private Nutricionista nutricionista;
 
     
